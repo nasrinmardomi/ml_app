@@ -20,6 +20,7 @@ if st.button("Predict"):
         data=[[hours]]
         scaled_data=scaler.transform(data)
         prediction = model.predict(scaled_data)
-        st.write(f"predicted test score: {prediction[0]:.2f}")
+        pred_value = float(prediction[0])
+        st.write(f"predicted test score: {float(prediction[0]):.2f}")
     except Exception as e:
         st.error(f"Eroor: {e}")
